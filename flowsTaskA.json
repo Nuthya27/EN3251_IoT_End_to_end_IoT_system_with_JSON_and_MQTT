@@ -1,0 +1,404 @@
+[
+    {
+        "id": "e4f660fd49c00876",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5f0d3e77f466a5d7",
+        "type": "mqtt in",
+        "z": "e4f660fd49c00876",
+        "name": "MQTT data in",
+        "topic": "EnigmaTaskA",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "25236b8afb422172",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "5ce94e213835a3bf",
+                "130823081d4416f4",
+                "0580b6fcdb5a11dc",
+                "b016f18a1288cb94",
+                "ac822fc0e0da0174",
+                "2044072aaab47ce6"
+            ]
+        ]
+    },
+    {
+        "id": "fcb66281b9807777",
+        "type": "ui_text",
+        "z": "e4f660fd49c00876",
+        "group": "8954b1ff4fd30ab1",
+        "order": 1,
+        "width": 10,
+        "height": 2,
+        "name": "",
+        "label": "Value",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Trebuchet MS,Helvetica,sans-serif",
+        "fontSize": "30",
+        "color": "#bbbd3d",
+        "x": 630,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5ce94e213835a3bf",
+        "type": "change",
+        "z": "e4f660fd49c00876",
+        "name": "Pot Value",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PotValue",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "fcb66281b9807777",
+                "ddb4c3c5301fc713"
+            ]
+        ]
+    },
+    {
+        "id": "130823081d4416f4",
+        "type": "change",
+        "z": "e4f660fd49c00876",
+        "name": "LDR Value",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.LDRValue",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "21681ee886ee67a0",
+                "9a3222e27026f3bb"
+            ]
+        ]
+    },
+    {
+        "id": "21681ee886ee67a0",
+        "type": "ui_text",
+        "z": "e4f660fd49c00876",
+        "group": "be98b8180ba33062",
+        "order": 1,
+        "width": 10,
+        "height": 2,
+        "name": "",
+        "label": "Value",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Trebuchet MS,Helvetica,sans-serif",
+        "fontSize": "30",
+        "color": "#bbbd3d",
+        "x": 650,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0580b6fcdb5a11dc",
+        "type": "debug",
+        "z": "e4f660fd49c00876",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b016f18a1288cb94",
+        "type": "change",
+        "z": "e4f660fd49c00876",
+        "name": "Pot Range",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.PotRange",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 420,
+        "wires": [
+            [
+                "ceaac09ff25018c4"
+            ]
+        ]
+    },
+    {
+        "id": "ac822fc0e0da0174",
+        "type": "change",
+        "z": "e4f660fd49c00876",
+        "name": "LDR Range",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.LDRRange",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 540,
+        "wires": [
+            [
+                "aa64335d50a0bc7e"
+            ]
+        ]
+    },
+    {
+        "id": "ceaac09ff25018c4",
+        "type": "ui_text",
+        "z": "e4f660fd49c00876",
+        "group": "8954b1ff4fd30ab1",
+        "order": 3,
+        "width": 10,
+        "height": 3,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Trebuchet MS,Helvetica,sans-serif",
+        "fontSize": "35",
+        "color": "#f3f4b8",
+        "x": 630,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "aa64335d50a0bc7e",
+        "type": "ui_text",
+        "z": "e4f660fd49c00876",
+        "group": "be98b8180ba33062",
+        "order": 3,
+        "width": 10,
+        "height": 3,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Trebuchet MS,Helvetica,sans-serif",
+        "fontSize": "35",
+        "color": "#f3f4b8",
+        "x": 630,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "ddb4c3c5301fc713",
+        "type": "ui_chart",
+        "z": "e4f660fd49c00876",
+        "name": "",
+        "group": "8954b1ff4fd30ab1",
+        "order": 2,
+        "width": 10,
+        "height": 4,
+        "label": "Pot Value Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4095",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#fea19f",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a3222e27026f3bb",
+        "type": "ui_chart",
+        "z": "e4f660fd49c00876",
+        "name": "",
+        "group": "be98b8180ba33062",
+        "order": 2,
+        "width": 10,
+        "height": 4,
+        "label": "LDR Value Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4095",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ffe852",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2044072aaab47ce6",
+        "type": "link out",
+        "z": "e4f660fd49c00876",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "61b779f63acd0b89"
+        ],
+        "x": 185,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "25236b8afb422172",
+        "type": "mqtt-broker",
+        "name": "Hivemq",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8954b1ff4fd30ab1",
+        "type": "ui_group",
+        "name": "POTENTIOMETER",
+        "tab": "b0eb3e9e8d3e861d",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "be98b8180ba33062",
+        "type": "ui_group",
+        "name": "LDR",
+        "tab": "b0eb3e9e8d3e861d",
+        "order": 2,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b0eb3e9e8d3e861d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
